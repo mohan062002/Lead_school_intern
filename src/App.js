@@ -11,8 +11,9 @@ const App = () => {
 
   const fetchLocationInfo = async (countryCode, postalCode) => {
     setLoading(true);
+    const countryCodeUpper = countryCode.toUpperCase();
     try {
-      const response = await fetch(`https://api.zippopotam.us/${countryCode}/${postalCode}`);
+      const response = await fetch(`https://api.zippopotam.us/${countryCodeUpper}/${postalCode}`);
       if (!response.ok) {
         throw new Error('Invalid postal code or country code');
       }
